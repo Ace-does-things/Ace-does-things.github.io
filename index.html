@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prisma Powdercoating</title>
+  <meta name="description" content="Durable, high‑quality powder coating for wheels, frames, calipers, engine parts and more in Battle Ground / La Center, WA." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://YOURUSERNAME.github.io/" />
+  <meta name="theme-color" content="#0e0f12">
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Prisma Powdercoating">
+  <meta property="og:description" content="Premium powder coating • Fast turnaround • Wheels, ATV/Moto, calipers, engine parts">
+  <meta property="og:url" content="https://YOURUSERNAME.github.io/">
+  <meta property="og:image" content="https://images.squarespace-cdn.com/content/v1/65e393e6de8997398e37ac1e/f9339d05-88de-40d1-b6f7-ac56720f005d/IMG_E1745.JPG">
+  <style>
+    :root{
+      --bg:#0e0f12; --card:#17181d; --txt:#e9eef5; --muted:#a9b3c0;
+      --brand:#ff2d2d; --brand-2:#c0c6d1; --max:1200px; --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--txt);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:var(--brand);text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+
+    /* Accessibility */
+    :focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+    .skip-to{position:absolute;left:-9999px}
+    .skip-to:focus{left:12px;top:12px;z-index:999;background:#fff;color:#000;padding:8px 12px;border-radius:8px}
+
+    header{position:sticky;top:0;z-index:40;backdrop-filter:saturate(140%) blur(8px);
+      background:linear-gradient(180deg, rgba(14,15,18,.9), rgba(14,15,18,.65));
+      border-bottom:1px solid rgba(255,255,255,.06)}
+    /* Centered header layout */
+    .nav{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;text-align:center}
+    .brand img{width:64px;height:64px;border-radius:12px;object-fit:contain;background:transparent}
+    .brand span{letter-spacing:.2px}
+    .nav a.btn{padding:10px 16px;border-radius:12px;font-weight:700;border:1px solid rgba(255,255,255,.12);background:transparent}
+    .btn{display:inline-block;padding:12px 18px;border-radius:14px;font-weight:700;border:1px solid rgba(255,255,255,.12);transition:transform .15s ease, background .2s ease}
+    .btn:hover{transform:translateY(-1px)}
+    .btn.primary{background:var(--brand);color:#04131c;border-color:transparent}
+    .btn.ghost{color:var(--txt);background:transparent}
+
+    /* Mobile menu */
+    #menuBtn{display:none}
+    @media (max-width:780px){
+      #menuBtn{display:inline-block;position:absolute;right:16px;top:14px}
+      nav.primary{display:none;position:absolute;right:20px;top:76px;background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:14px;box-shadow:var(--shadow);padding:10px}
+      nav.primary.open{display:block}
+      nav.primary a{display:block;margin:6px 0}
+    }
+
+    /* Hero */
+    .hero{position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.06);
+      background:radial-gradient(800px 400px at 10% -10%, rgba(255,45,45,.25), transparent 60%),
+                 radial-gradient(900px 400px at 110% 10%, rgba(255,45,45,.12), transparent 60%)}
+    .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;padding:96px 0}
+    .hero h1{font-size:clamp(34px,6vw,60px);line-height:1.05;margin:0 0 10px}
+    .hero p{color:var(--muted);font-size:clamp(16px,2.2vw,18px);margin:0 0 24px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);box-shadow:var(--shadow)}
+    section{padding:56px 0}
+    .section-title{display:flex;align-items:end;justify-content:space-between;margin-bottom:22px}
+    .section-title h2{margin:0;font-size:clamp(22px,3.5vw,32px)}
+    .muted{color:var(--muted)}
+    .grid{display:grid;gap:18px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-4{grid-template-columns:repeat(4,1fr)}
+    @media (max-width:980px){
+      .hero-inner{grid-template-columns:1fr;text-align:center}
+      .cta{justify-content:center}
+    }
+    @media (max-width:640px){.grid.cols-3{grid-template-columns:1fr} .grid.cols-4{grid-template-columns:1fr}}
+
+    .service{padding:18px}
+    .service h3{margin:10px 0 6px}
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(255,45,45,.12);border:1px solid rgba(255,45,45,.35);font-weight:600}
+    .gallery .item{overflow:hidden;border-radius:14px;border:1px solid rgba(255,255,255,.06)}
+    .gallery .item img{transition:transform .4s ease}
+    .gallery .item:hover img{transform:scale(1.04)}
+    .about{display:grid;gap:22px;grid-template-columns:1fr 1fr}
+    @media (max-width:980px){.about{grid-template-columns:1fr}}
+    .contact .card{padding:18px}
+    form{display:grid;gap:12px}
+    label{font-weight:600;font-size:14px}
+    input,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:#111318;color:var(--txt);outline:none}
+    input::placeholder,textarea::placeholder{color:#8894a3}
+    .footer{padding:28px 0;border-top:1px solid rgba(255,255,255,.06);color:var(--muted)}
+    .note{font-size:13px;color:#91a0b2}
+
+    /* Reveal on scroll */
+    .reveal{opacity:0;transform:translateY(12px)}
+    .reveal.in{opacity:1;transform:none;transition:opacity .6s ease, transform .7s cubic-bezier(.2,.6,0,1)}
+
+    /* Active section indicator */
+    .active-link{border-color:rgba(255,45,45,.5);box-shadow:0 0 0 3px rgba(255,45,45,.2)}
+  </style>
+</head>
+<body>
+  <a href="#content" class="skip-to">Skip to content</a>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <!-- Upload your logo as /assets/logo.png or /assets/logo.jpg -->
+        <img src="assets/logo.png" onerror="this.onerror=null;this.src='assets/logo.jpg'" alt="Prisma Powdercoating logo"/>
+        <span>Prisma Powdercoating</span>
+      </div>
+      <button id="menuBtn" class="btn" aria-expanded="false" aria-controls="primaryNav">Menu</button>
+      <nav id="primaryNav" class="primary">
+        <a class="btn ghost" href="#services">Services</a>
+        <a class="btn ghost" href="#gallery">Gallery</a>
+        <a class="btn ghost" href="#about">About</a>
+        <a class="btn primary" href="#contact">Get a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="hero reveal">
+      <div class="wrap hero-inner">
+        <div>
+          <div class="badge">Durable finishes • Fast turnaround</div>
+          <h1>Premium Powder Coating for Wheels, Frames & Custom Parts</h1>
+          <p>We prep, coat, and cure with industry‑grade equipment to deliver a finish that’s tougher than paint and built to last. Automotive, industrial, and one‑off customs welcome.</p>
+          <div class="cta">
+            <a class="btn primary" href="#contact">Request a Quote</a>
+            <a class="btn" href="#gallery" style="background:transparent;border-color:rgba(255,45,45,.5);color:#ffd9d9;">See Work</a>
+          </div>
+          <p class="note" style="margin-top:14px">* Demo site for client preview. Content/images sourced from client’s public site.</p>
+        </div>
+        <div class="card" style="overflow:hidden">
+          <img loading="eager" src="https://images.squarespace-cdn.com/content/v1/65e393e6de8997398e37ac1e/f9339d05-88de-40d1-b6f7-ac56720f005d/IMG_E1745.JPG" alt="Set of gloss black powder‑coated wheels in front of Prisma banner" />
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="reveal">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Services & Costs</h2>
+          <span class="muted">Blasting • Prep • Coating • Curing</span>
+        </div>
+        <div class="grid cols-3">
+          <div class="card service">
+            <img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/65e393e6de8997398e37ac1e/f9339d05-88de-40d1-b6f7-ac56720f005d/IMG_E1745.JPG" alt="Powder‑coated wheels, gloss black" />
+            <h3>Wheels</h3>
+            <p class="muted">Flawless, durable finishes for street or off‑road sets. Color‑matched or custom tones. Get a quick quote.</p>
+          </div>
+          <div class="card service">
+            <img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/65e393e6de8997398e37ac1e/43c412a3-584c-4706-b05c-16e6b5725394/IMG_E1749.JPG" alt="ATV frame powder‑coated light gray" />
+            <h3>ATV Frame</h3>
+            <p class="muted">Trail‑tough coatings in bold colors with proper prep and inspection.</p>
+          </div>
+          <div class="card service">
+            <img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/65e393e6de8997398e37ac1e/441b64d4-12ab-4b19-938f-34703e6565fe/IMG_E1529.JPG" alt="Motorcycle frame and parts, deep red" />
+            <h3>Bike Frame</h3>
+            <p class="muted">Gloss, matte, or metallic looks with rust‑resistant performance.</p>
+          </div>
+          <div class="card service">
+            <img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/65e393e6de8997398e37ac1e/b7653635-25ee-4ad4-9543-e70bbba9dfc4/IMG_E1767.JPG" alt="Set of Porsche brake calipers coated red" />
+            <h3>Calipers</h3>
+            <p class="muted">High‑temp coatings for a bold, brake‑dust‑resistant finish.</p>
+          </div>
+          <div class="card service">
+            <img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/65e393e6de8997398e37ac1e/312ca80b-0e83-4c8f-a35b-1db70d707b8e/IMG_E1748.JPG" alt="Coated frame and hardware laid out on workbench" />
+            <h3>E‑Bike</h3>
+            <p class="muted">Scratch‑resistant, vibrant colorways for e‑bikes and small frames.</p>
+          </div>
+          <div class="card service">
+            <img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/65e393e6de8997398e37ac1e/627e56f0-790a-4248-9a75-92496ce69458/IMG_E1768.JPG" alt="Engine parts and valve covers with textured blue" />
+            <h3>Engine Parts</h3>
+            <p class="muted">Heat‑ and corrosion‑resistant finishes for covers, brackets, intakes, and more.</p>
+          </div>
+        </div>
+        <p class="note" style="margin-top:10px">Service categories and photos reflect the live site’s “Costs & services” page. Contact for exact pricing and lead times.</p>
+      </div>
+    </section>
+
+    <section id="gallery" class="gallery reveal">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Recent Work</h2>
+          <a class="btn ghost" href="#contact">Request a Quote</a>
+        </div>
+        <div class="grid cols-4">
+          <div class="item"><img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/65e393e6de8997398e37ac1e/a4377172-79bc-4da7-8db4-85a0a6956df7/IMG_E1743.JPG" alt="Beadlock wheels prepped, light gray" /></div>
+          <div class="item"><img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/65e393e6de8997398e37ac1e/3c666156-54f9-4d21-9584-a7c46fa9ce55/IMG_E1528.JPG" alt="Iridescent black frame finish" /></div>
+          <div class="item"><img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/65e393e6de8997398e37ac1e/0b77b21c-5f15-48e5-981f-c48b7f9137a1/IMG_E1534.JPG" alt="Coated springs and control arms, red and black" /></div>
+          <div class="item"><img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/65e393e6de8997398e37ac1e/e6eaa33f-73c5-4d48-b887-377d41d339df/IMG_E1774.JPG" alt="Purple motorcycle/ATV frame in front of banner" /></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="reveal">
+      <div class="wrap about">
+        <div class="card" style="padding:22px">
+          <h2>About Us</h2>
+          <p class="muted">Local powder‑coating shop focused on quality prep and consistent curing. Every part is degreased, media‑blasted, and inspected before coating so your finish looks great and lasts longer.</p>
+          <ul class="muted" style="list-style:disc;padding-left:1.2rem">
+            <li>Professional media blasting & prep</li>
+            <li>Thousands of colors and textures</li>
+            <li>Quick quotes & realistic lead times</li>
+          </ul>
+        </div>
+        <div class="card" style="padding:22px">
+          <h2>Why Powder Coat?</h2>
+          <p class="muted">Powder coating is tougher than liquid paint, highly chip‑ and corrosion‑resistant, and eco‑friendly. Perfect for parts that need to look good and work hard.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact reveal">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Get a Quote</h2>
+          <span class="muted">Send photos, dimensions, and color ideas.</span>
+        </div>
+        <div class="grid cols-3">
+          <div class="card" style="padding:18px">
+            <h3>Contact</h3>
+            <p class="muted">
+              Joseph Perin — <a href="tel:+13188169603">(318) 816‑9603</a><br>
+              <a href="mailto:PrismaPowderCoating@gmail.com">PrismaPowderCoating@gmail.com</a><br>
+              22515 NE 92nd Ave, Battle Ground, WA 98604
+            </p>
+            <p class="note">Info from the live site. Call for availability.</p>
+          </div>
+          <div class="card" style="padding:18px">
+            <h3>Quote Form</h3>
+            <form action="mailto:PrismaPowderCoating@gmail.com" method="post" enctype="text/plain">
+              <label for="q-name">Name</label>
+              <input id="q-name" name="name" required placeholder="Your name" />
+              <label for="q-email">Email</label>
+              <input id="q-email" name="email" type="email" required placeholder="Email address" />
+              <label for="q-details">Project details</label>
+              <textarea id="q-details" name="details" rows="5" placeholder="What parts? Size, material, color, timeline"></textarea>
+              <label for="q-phone">Phone (optional)</label>
+              <input id="q-phone" name="phone" type="tel" placeholder="Phone number" />
+              <button class="btn primary" type="submit">Send</button>
+            </form>
+          </div>
+          <div class="card" style="padding:18px">
+            <h3>Location</h3>
+            <p class="muted">Battle Ground / La Center, WA • Parking for trailers</p>
+            <iframe title="Map" loading="lazy" style="width:100%;height:220px;border:0;border-radius:12px" src="https://www.openstreetmap.org/export/embed.html?bbox=-122.78,45.60,-122.55,45.70&layer=mapnik"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="footer">
+    <div class="wrap">
+      © <span id="y"></span> Prisma Powdercoating • Demo site
+    </div>
+  </div>
+
+  <script>
+    // Current year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const nav = document.getElementById('primaryNav');
+    menuBtn?.addEventListener('click', ()=>{
+      const open = !nav.classList.contains('open');
+      nav.classList.toggle('open', open);
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+
+    // Offset-aware smooth scrolling for in-page links (accounts for sticky header)
+    function scrollWithOffset(target) {
+      const header = document.querySelector('header');
+      const top = target.getBoundingClientRect().top + window.pageYOffset - (header?.offsetHeight || 0) - 8;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        if (!id || id === '#') return;
+        const el = document.querySelector(id);
+        if (el) { e.preventDefault(); scrollWithOffset(el); nav?.classList.remove('open'); menuBtn?.setAttribute('aria-expanded','false'); }
+      });
+    });
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('in'); io.unobserve(entry.target); } });
+    },{threshold:.15});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    // Active nav highlighting
+    const sections = ['#services','#gallery','#about','#contact'].map(s=>document.querySelector(s)).filter(Boolean);
+    const links = Array.from(document.querySelectorAll('nav.primary a'));
+    function setActive(){
+      const y = window.scrollY + (document.querySelector('header')?.offsetHeight||0) + 24;
+      let current = null;
+      for(const sec of sections){ if(sec.offsetTop <= y) current = sec; }
+      links.forEach(l=>l.classList.toggle('active-link', current && l.getAttribute('href') === '#' + current.id));
+    }
+    setActive();
+    window.addEventListener('scroll', setActive, {passive:true});
+
+    // Respect reduced motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      document.querySelectorAll('*').forEach(el=>{ el.style.transition='none'; el.style.animation='none'; });
+    }
+  </script>
+
+  <!-- LocalBusiness schema (fill real values if needed) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Prisma Powdercoating",
+    "image": "https://images.squarespace-cdn.com/content/v1/65e393e6de8997398e37ac1e/f9339d05-88de-40d1-b6f7-ac56720f005d/IMG_E1745.JPG",
+    "url": "https://YOURUSERNAME.github.io/",
+    "telephone": "+1-318-816-9603",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "22515 NE 92nd Ave",
+      "addressLocality": "Battle Ground",
+      "addressRegion": "WA",
+      "postalCode": "98604",
+      "addressCountry": "US"
+    },
+    "openingHours": "Mo-Fr 09:00-17:00"
+  }
+  </script>
+</body>
+</html>
